@@ -1,6 +1,6 @@
 const carrito = [];
 
-const path = location.pathname;
+const ubicacion = location.href;
 
 const container = document.querySelector("div.containerTienda");
 const contenedorCarrito = document.querySelector("#lista-carrito");
@@ -25,7 +25,7 @@ const cargarNfts = () => {
   });
   habilitarBotones();
 };
-if (path.includes("section/tienda.html")) {
+if (ubicacion.includes("section/tienda.html")) {
   cargarNfts();
 }
 
@@ -75,10 +75,6 @@ const mostrarCarritoHtml = () => {
   });
 };
 
-if (carrito.length > 0) {
-  divCheckOut.innerHTML = generarBtnCheckOut();
-  mostrarCarritoHtml();
-}
 
 const fnVaciarCarrito = () => {
   contenedorCarrito.innerHTML = "";
@@ -92,15 +88,6 @@ vaciarCarrito.addEventListener("click", fnVaciarCarrito);
 
 const btnCheckOut = document.querySelector("#buttonCheckout");
 
-const redireccionCheckout = () => {
-    if(path.includes("index.html")){
-        btnCheckOut.addEventListener('click', () => {window.location.href = "section/checkout.html"})
-    } else if (path.includes("section/tienda.html") || path.includes("section/cotizacionesCrypto.html")) {
-        btnCheckOut?.addEventListener('click', () => {window.location.href = "checkout.html"})
-    }
-
-}
-redireccionCheckout();
 
 
 const recuperarCartCheckout = () => {
@@ -109,9 +96,27 @@ const recuperarCartCheckout = () => {
           carritoRecuperado.forEach(producto => carrito.push() )
   } 
 }
-if (path.includes("section/checkout.html")) {
+if (ubicacion.includes("section/checkout.html")) {
   recuperarCartCheckout();
   cargarCarritoCheckOut();
+}
+
+const redireccionCheckout = () => {
+  if(ubicacion.includes("index.html")) {
+    divCheckOut.addEventListener('click', ()=>{
+        window.location.href = "section/checkout.html";
+      })}
+      else if (ubicacion.includes("section/tienda.html") || ubicacion.includes("section/cotizacionesCrypto.html")) {
+        divCheckOut.addEventListener('click', ()=> {
+          window.location.href = "checkout.html"
+        })
+      }
+}
+
+if (carrito.length > 0) {
+  mostrarCarritoHtml();
+  divCheckOut.innerHTML = generarBtnCheckOut();
+  redireccionCheckout();
 }
 
 
@@ -129,4 +134,6 @@ const mensajeCompra = () => {
     },
   }).showToast();
 }
-btnComprar.addEventListener('click', mensajeCompra);
+if (ubicacion.includes("section/checkout.html")) {
+  btnComprar.addEventListener('click', mensajeCompra);
+}

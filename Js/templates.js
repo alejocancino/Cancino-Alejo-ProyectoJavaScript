@@ -34,12 +34,13 @@ const generarNftSeleccionado = (productoSelec) => {
 
 const generarBtnCheckOut = () => {
   return `
-    <button type="button" id="buttonCheckout" class="btn btn-primary">Check-Out</button>
+    <button type="button" id="buttonCheckout" class="btn btn-primary d-block">Check-Out</button>
     `;
 };
 
 
 const cargarCarritoCheckOut = () => {
+  if(ubicacion.includes("section/checkout.html")) {
     let tablaHtml = "";
     const tbody = document.querySelector("tbody");
 
@@ -52,4 +53,5 @@ const cargarCarritoCheckOut = () => {
                         </tr>`
         })
         tbody.innerHTML = tablaHtml;
+  }
 }
