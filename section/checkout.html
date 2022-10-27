@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIGIT-ART | Tienda</title>
+
+  <!-- SEO -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Tostify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="../styles/style.css" />
+
+  <!-- JavaScript -->
+  <script defer src="../Js/db.js"></script>
+  <script defer src="../Js/templates.js"></script>
+  <script defer src="../Js/dom.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark me-5 ms-5">
+      <div class="container-fluid container align-content-center justify-content-center gap-4">
+        <a class="navbar-brand fs-1 ms-5 me-5" href="#">DIGIT-ART</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 m-0">
+            <li class="nav-item ms-md-4 me-md-4">
+              <a class="m-0 nav-link active" aria-current="page" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item ms-md-4 me-md-4">
+              <a class="m-0 nav-link" href="tienda.html">Tienda</a>
+            </li>
+            <li class="nav-item ms-md-4 me-md-4">
+              <a class="m-0 nav-link" href="cotizacionesCrypto.html">Cotizaciones Crypto</a>
+            </li>
+          </ul>
+        </div>
+        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"><img src="../imgs/cart2 (1).svg" alt="" /></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CANVA CARRITO-->
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fs-2" id="offcanvasWithBothOptionsLabel">
+        Tú carrito
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex justify-content-evenly">
+      <div id="carrito">
+        <div class="row" id="lista-carrito"></div>
+        <div class="d-flex justify-content-evenly m-auto">
+          <div>
+            <button type="button" id="vaciar-carrito" class="btn btn-danger" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">
+              Vaciar carrito
+            </button>
+          </div>
+          <div id="div-checkout"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CANVA CARRITO-->
+
+  <main class="mt-5 bg-white p-5">
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">
+              Cuidado!
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="fs-4">¿Seguro desea vaciar el carrito?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+            <button type="button" data-bs-dismiss="modal" class="btn btn-danger" id="confirmarVaciar" value="1">
+              Vaciar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <h1 class="m-5">Check - out</h1>
+      <table class="m-auto table fw-bold">
+          <thead>
+              <tr class="fs-2">
+                  <th id="tablehead">Producto</th>
+                  <th id="tablehead">Nombre</th>
+                  <th id="tablehead">Codigo</th>
+                  <th id="tablehead">Precio BTC</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="fs-3">
+                  <td>Aquí</td>
+                  <td>verás</td>
+                  <td>tus productos</td>
+                  <td>🖼</td>
+              </tr>
+          </tbody>
+      </table>
+  </section>
+
+    <div>
+      <button class="btn btn-primary mt-5" id="btnComprarCheckout">Comprar</button>
+    </div>
+
+  </main>
+</body>
+
+</html>

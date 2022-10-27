@@ -1,0 +1,32 @@
+$tipografia:'Montserrat', sans-serif;
+$Oscuro: #0c161f;
+$Blanco: #F2F2F2;
+$primario:#1B8EF2;
+$primario-segundo: #22A2F2;
+$primario-claro:#5CB9F2;
+
+/* RESETEO */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body {
+    font-family: $tipografia;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    background-color: $Oscuro;
+}
+ul {
+    list-style-type: none;
+}
+img{
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}

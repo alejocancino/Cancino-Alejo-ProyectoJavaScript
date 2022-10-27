@@ -1,0 +1,22 @@
+@import "../utilities/variables";
+
+.navbar {
+    font-size: 2rem;
+    div {
+        color: $Blanco;
+    }
+}
+
+.btn {
+    font-size: 2rem;
+    border-color: $Blanco;
+    color: $Blanco;
+    margin-left: 2rem;
+}
+
+
+.cart-svg {
+    cursor: pointer;
+    width: 4rem;
+    
+}
