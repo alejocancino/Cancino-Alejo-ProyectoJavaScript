@@ -26,9 +26,8 @@
     <link rel="stylesheet" href="../styles/style.css" />
 
     <!-- JavaScript -->
-    <script defer src="../Js/db.js"></script>
     <script defer src="../Js/templates.js"></script>
-    <script defer src="../Js/dom.js"></script>
+    <script defer src="../Js/scripts.js"></script>
 </head>
 
 <body>
@@ -48,9 +47,6 @@
                         </li>
                         <li class="nav-item ms-md-4 me-md-4">
                             <a class="m-0 nav-link" href="#">Tienda</a>
-                        </li>
-                        <li class="nav-item ms-md-4 me-md-4">
-                            <a class="m-0 nav-link" href="cotizacionesCrypto.html">Cotizaciones Crypto</a>
                         </li>
                     </ul>
                 </div>
@@ -99,11 +95,8 @@
             <div id="carrito">
               <div class="row" id="lista-carrito"></div>
               <div class="d-flex justify-content-evenly m-auto">
-                <div>
-                  <button type="button" id="vaciar-carrito" class="btn btn-danger" data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop">
-                  Vaciar carrito
-                </button>
+                <div id="div-vaciarCarrito">
+                
                 </div>
                 <div id="div-checkout"></div>
               </div>

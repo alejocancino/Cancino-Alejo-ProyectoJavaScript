@@ -1,6 +1,6 @@
 // CONSTRUCTORES
 class GenerarNFT {
-    constructor(nombre, codigo, precioSubasta, precioAhora) {
+    constructor(nombre, codigo, precioAhora) {
       this.nombre = nombre;
       this.codigo = codigo;
       this.precioAhora = precioAhora;
@@ -8,6 +8,7 @@ class GenerarNFT {
   }
 // --------------------------------------------------
 
+// Template de card
 const generarCard = (nft) => {
   return `<div class="card m-3" style="width: 18rem;">
             <h1 class="text-center fs-1 m-5">${nft.imagen}</h1>
@@ -20,6 +21,7 @@ const generarCard = (nft) => {
             </div>`;
 };
 
+// template de card seleccionada para generar en el carrito
 const generarNftSeleccionado = (productoSelec) => {
   return `
         <div class="col-md-4 col-5 card card-body m-4">
@@ -32,13 +34,22 @@ const generarNftSeleccionado = (productoSelec) => {
     `;
 };
 
+// generar btn para checkout
 const generarBtnCheckOut = () => {
   return `
-    <button type="button" id="buttonCheckout" class="btn btn-primary d-block">Check-Out</button>
+    <button type="button" id="buttonCheckout" class="btn btn-primary d-block"><a class="text-white" href="../section/checkout.html">Check Out</a></button>
     `;
 };
+// generar btn vaciar
+const generarBtnVaciarCarrito = () => {
+  return `
+  <button type="button" id="vaciar-carrito" class="btn btn-danger m-0" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">Vaciar carrito
+  </button>
+  `
+}
 
-
+// Template para generar carrito en checkout
 const cargarCarritoCheckOut = () => {
   if(ubicacion.includes("section/checkout.html")) {
     let tablaHtml = "";
@@ -55,3 +66,4 @@ const cargarCarritoCheckOut = () => {
         tbody.innerHTML = tablaHtml;
   }
 }
+

@@ -20,3 +20,17 @@
     width: 4rem;
     
 }
+.alturaImg{
+    width: 100%;
+    border-radius:.5rem ;
+    max-height: 50rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.contendorCarrousel {
+    border-radius: .5rem;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 45px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 45px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 45px 0px rgba(255,255,255,1);
+}
