@@ -11,15 +11,17 @@ fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
     .then(response => response.json())
     .then(data => displayData(data));
     
-    
+
+// declaro funcion flecha y consigo datos del fetch, luego realizo una operacion con el valor del btcoin
 const displayData = data => {
     const USD = data.bpi.USD.rate_float;
     usdAmount.innerHTML = `${USD}`;
-    usdText.innerHTML = `U$D`
-    totalDolares.innerHTML = `U$D ${USD * nPrecio}`;
+    usdText.innerHTML = `U$D`;
+    totalDolares.innerHTML = `U$D ${(USD * nPrecio).toFixed(2)}`;
     mostrarPrecio();
 }
 
+// Mensaje compra
 const mensajeCompra = () => {
     Swal.fire({
         title: 'Gracias por su compra',
@@ -43,7 +45,7 @@ const mensajeCompra = () => {
 alertaCompra.addEventListener('click', mensajeCompra);
 
 
-
+// funcion que escribe en pantalla los precios
 const mostrarPrecio = () => {
     totalSuma.classList.add("fs-1", "d-flex");
     totalSuma.innerHTML = `₿ ${nPrecio}`;

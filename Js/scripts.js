@@ -112,6 +112,7 @@ const fnVaciarCarrito = () => {
 };
 vaciarCarrito.addEventListener("click", fnVaciarCarrito);
 
+// Selector btn checkout
 const btnCheckOut = document.querySelector("#buttonCheckout");
 
 // recuperar carrito para el checkout
